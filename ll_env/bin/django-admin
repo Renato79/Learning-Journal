@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/rbianco/Desktop/reboot/Python Crash Course - Projects/Learning-Journal/ll_env/bin/python3" "$0" "$@"
+'''exec' "/Users/rbianco/Desktop/reboot/Projects/Learning-Journal/ll_env/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
