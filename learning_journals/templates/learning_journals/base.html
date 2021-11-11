@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Learning Journal</title>
+</head>
+
+<body>
+    <p>
+        <a href="{% url 'learning_journals:index' %}">Learning Journal</a>
+    </p>
+
+    <p>
+        <a href="{% url 'learning_journals:index' %}">Home</a> -
+        <a href="{% url 'learning_journals:topics' %}">Topics</a>
+    </p>
+    {% block content %}{% endblock content %}
+</body>
+
+</html>
