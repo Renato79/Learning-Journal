@@ -10,13 +10,17 @@
 
 <body>
     <p>
-        <a href="{% url 'learning_journals:index' %}">Learning Journal</a>
+        <a href="{% url 'learning_journals:index' %}">Home</a> -
+        <a href="{% url 'learning_journals:topics' %}">Topics</a> -
+        {% if user.is_authenticated %}
+            Hello, {{ user.username }}.
+            <a href="{% url 'users:logout' %}">Log out</a>
+        {% else %}
+            <a href="{% url 'users:register' %}">Register</a> -
+            <a href="{% url 'users:login' %}">Log in</a>
+        {% endif %}
     </p>
 
-    <p>
-        <a href="{% url 'learning_journals:index' %}">Home</a> -
-        <a href="{% url 'learning_journals:topics' %}">Topics</a>
-    </p>
     {% block content %}{% endblock content %}
 </body>
 
