@@ -1,7 +1,58 @@
 {% extends "learning_journals/base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-lg-6">
+      <h1 class="display-4 fw-bold mt-5 txt-sm-center">Track your learning</h1>
+
+      <p class="lead text-secondary txt-sm-center">Make your own Learning Journal, keep a list of the
+        topics you're learning about, and keep track of your progress. Whenever you learn something new
+        about a topic, make an entry summarizing what you've learned.</p>
+
+      <p class="txt-sm-center"><a class="btn-red btn-index-size" href="{% url 'users:register' %}" role="button">Get Started</a></p>
+    </div>
+    <div class="col-sm-12 col-lg-6 txt-sm-center">
+      <img src="{% static 'images/notelist.png' %}" class="index-img" alt="Note list image">
+    </div>
+
+  </div>
+
+  <div class="row tips">
+    <div class="col-sm-12 col-md-3">
+      <i class="fab fa-leanpub"></i>
+      <p>Identify gaps in knowledge.</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <i class="far fa-lightbulb"></i>
+      <p>Store thoughts, ideas and knowledge to ensure retention.</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <i class="fas fa-clipboard-list"></i>
+      <p>Work to develop solutions to problems.</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <i class="fas fa-user-cog"></i>
+      <p>Develops self-directed learning characteristics.</p>
+    </div>
+  </div>
+</div>
+
+<div class="contactus-div">
+  <i class="fas fa-envelope-open-text"></i>
+</div>
+
+{% endblock page_header %}
 
 
-{% block content %}
-  <p>Learning Journal helps you keep track of your learning, for any topic you're
-  learning about.</p>
-{% endblock content %}
+<!--
+four reasons to keep a learning journal:
+
+- Identifies gaps in knowledge.
+- Stores thoughts, ideas and knowledge to ensure retention.
+- Works to develop solutions to problems.
+- Develops self-directed learning characteristics.
+-->
