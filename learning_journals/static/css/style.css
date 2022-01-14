@@ -35,11 +35,16 @@ button.btn-red {
   }
 
   .btn-login-size {
+    width: 100%;
     padding: 0.6rem 2rem;
   }
 
   .btn-index-size {
     padding: 1rem 2rem;
+  }
+
+  .btn-add-size {
+    padding: 0.4rem 1.5rem;
   }
 
   .form-red:focus > input {
@@ -69,23 +74,46 @@ color: #3f3d56;
   }
 
 
-/*
-.tip1 {
-  background-color: #e4e4e4;
+/* topics.html */
+a.topics:link, 
+a.topics:visited {
+  color: #6c757d;
+  text-decoration: none;
 }
 
-.tip2 {
-  background-color: #eab6b9;
+a.topics:hover {
+  color: rgba(214, 41, 61, 0.863);
 }
 
-.tip3 {
-  background-color: #747482;
+a.addtopic:link, 
+a.addtopic:visited {
+  color: #474d52;
+  font-size: 1.3rem;
+  text-decoration: none;
 }
 
-.tip4 {
-  background-color: #706c84;
+a.addtopic:hover {
+  color: rgba(214, 41, 61, 0.863);
 }
-*/
+
+
+
+/* topic.html */
+a.edittopic:link, 
+a.edittopic:visited {
+  color: #474d52;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+a.edittopic:hover {
+  color: rgba(214, 41, 61, 0.863);
+}
+
+.txt-title {
+color: #474d52;
+font-size: 1.2rem;
+}
 
 @media (min-width: 768px) {
     /* contact us link will disappear from the menu after 576px,

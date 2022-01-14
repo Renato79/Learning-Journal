@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<p>Add a new topic:</p>
+<p class="txt-title">Add a new topic:</p>
 
 <form action="{% url 'learning_journals:new_topic' %}" method='POST'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit">Add topic</button>
+    <button name="submit" class="btn-red btn-add-size">Add topic</button>
 </form>
 
 {% endblock content %}

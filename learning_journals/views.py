@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib import messages
 from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -11,6 +12,11 @@ def index(request):
     """Home Page for learning_journals"""
     return render(request, 'learning_journals/index.html')
 
+
+
+"""
+TOPICS
+"""
 
 @login_required
 def topics(request):
@@ -48,6 +54,49 @@ def new_topic(request):
     # Display a blank or invalid form
     context = {'form': form}
     return render(request, 'learning_journals/new_topic.html', context)
+
+
+@login_required
+def edit_topic(request, topic_id):
+    """Edit an existing topic."""
+    topic = Topic.objects.get(id=topic_id)
+    # Make sure the topic belongs to the current user.
+    if topic.owner != request.user:
+        raise Http404
+    
+    if request.method != 'POST':
+        # Initial requestl pre-fill form with the current entry
+        form = TopicForm(instance=topic)
+    else:
+        # POST data submitted; process data.
+        form = TopicForm(instance=topic, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('learning_journals:topic', topic_id=topic.id)
+    
+    context = {'topic': topic, 'form': form}
+    return render(request,'learning_journals/edit_topic.html', context)
+
+
+@login_required
+def delete_topic(request, topic_id):
+    """Delete an existing entry."""
+    topic = Topic.objects.get(id=topic_id)
+
+    if topic.owner != request.user:
+        raise Http404
+    
+    topic.delete()
+    messages.success(request, 'Entry deleted!')
+    return redirect('learning_journals:topics')
+
+
+
+
+
+"""
+ENTRIES
+"""
 
 @login_required
 def new_entry(request, topic_id):
@@ -91,3 +140,16 @@ def edit_entry(request, entry_id):
     
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request,'learning_journals/edit_entry.html', context)
+
+@login_required
+def delete_entry(request, entry_id):
+    """Delete an existing entry."""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if topic.owner != request.user:
+        raise Http404
+    
+    entry.delete()
+    messages.success(request, 'Entry deleted!')
+    return redirect('learning_journals:topic', topic.id)

@@ -6,9 +6,9 @@
     <a href="{% url 'learning_journals:topic' topic.id %}" class="edittopic text-danger">{{ topic }}</a>
 </p>
 
-<p>Edit entry:</p>
+<p>Edit topic:</p>
 
-<form action="{% url 'learning_journals:edit_entry' entry.id %}" method='post'>
+<form action="{% url 'learning_journals:edit_topic' topic.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
     <button name="submit" class="btn-red btn-index-size">Save changes</button>

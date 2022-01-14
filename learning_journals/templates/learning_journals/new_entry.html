@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<p><a href="{% url 'learning_journals:new_entry' topic.id %}">{{ topic }}</a></p>
+<p><a href="{% url 'learning_journals:topic' topic.id %}" class="edittopic text-danger">{{ topic }}</a></p>
 
-<p>Add a new entry:</p>
+<p class="txt-title">Add a new entry:</p>
 <form action="{% url 'learning_journals:new_entry' topic.id %}" method='POST'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add entry</button>
+    <button name='submit' class="btn-red btn-index-size">Add entry</button>
 </form>
 
 {% endblock content %}
