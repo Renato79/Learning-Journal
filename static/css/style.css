@@ -1,0 +1,176 @@
+body {
+  font-family: 'Sathu', sans-serif !important;
+}
+
+/* Forms style START */
+input {
+  width: 30%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #6C757D !important;
+}
+
+textarea {
+  width: 80%;
+  height: 20rem;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+/* Forms style END */
+
+
+/* Colors */
+.orange-deep {
+  color: #EB5E22;
+}
+
+.darkgrey {
+  color: #5E6062;
+}
+
+/* General unordered lists style */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* topic.html and topics.html */
+a.edittopic:link,
+a.edittopic:visited {
+  color: #6C757D;
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+a.edittopic:hover {
+  color: #a1a1a1;
+}
+
+a.topics:link,
+a.topics:visited {
+  font-size: 1.7rem;
+  color: #5E6062;
+  text-decoration: none;
+}
+
+a.topics:hover {
+  color: #919090;
+}
+
+/* Line height under the orange title */
+.myline {
+  line-height: .5;
+}
+
+
+
+/* Index */
+.txt-sm-center {
+  text-align: center;
+}
+
+.index-img {
+  width: 18rem;
+  height: auto;
+  margin-right: 2rem;
+}
+
+a.btn-red:link,
+a.btn-red:visited,
+button.btn-red {
+  color: #ffffff;
+  background-color: #FF934F;
+  border: 1px solid transparent;
+  border-radius: 0.325rem;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+a.btn-red:hover,
+button.btn-red:hover {
+  background-color: #e0661a;
+  color: white;
+}
+
+.btn-login-size {
+  width: 100%;
+  padding: 0.6rem 2rem;
+}
+
+.btn-index-size {
+  padding: 1rem 2rem;
+}
+
+
+.contactus-div {
+  display: none;
+}
+
+.tips {
+  margin-top: 5rem !important;
+}
+
+.tips>div {
+  text-align: center;
+  /* opacity: 0.5; */
+}
+
+.tips i {
+  font-size: 2rem;
+  color: #3f3d56;
+}
+
+.tips p {
+  margin-top: 1rem;
+  color: #3f3d56;
+}
+
+
+@media (min-width: 576px) {
+  /* contact us link will disappear from the menu after 576px,
+   and an icon will appear at the bottom right instead */
+  .contactus-menu {
+    display: none;
+  }
+
+  /* Media query INDEX PAGE */
+  .contactus-div {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    border: 4px solid #3f3d56;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 10px 10px 5px #FF934F;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .contactus-div:hover {
+    box-shadow: 10px 10px 5px #a1a1a1;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .index-img {
+    width: 30rem;
+  }
+
+  .txt-sm-center {
+    text-align: left;
+  }
+}
