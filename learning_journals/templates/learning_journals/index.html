@@ -13,8 +13,15 @@
         topics you're learning about, and keep track of your progress. Whenever you learn something new
         about a topic, make an entry summarizing what you've learned.</p>
 
-      <p class="txt-sm-center"><a class="btn-red btn-index-size" href="{% url 'users:register' %}" role="button">Get Started</a></p>
+      {% if user.is_authenticated %}
+        <p class="txt-sm-center"><a class="btn-red btn-index-size" href="{% url 'learning_journals:topics'%}"
+          role="button">Your Topics</a></p>
+      {% else %}
+        <p class="txt-sm-center"><a class="btn-red btn-index-size" href="{% url 'users:register' %}" role="button">Get
+          Started</a></p>
+      {% endif %}
     </div>
+
     <div class="col-sm-12 col-lg-6 txt-sm-center">
       <img src="{% static 'images/notelist.png' %}" class="index-img" alt="Note list image">
     </div>
@@ -41,18 +48,10 @@
   </div>
 </div>
 
-<div class="contactus-div">
-  <i class="fas fa-envelope-open-text"></i>
-</div>
+<a class="darkgrey" href="{% url 'learning_journals:contact_us' %}">
+  <div class="contactus-div darkgrey">
+    <i class="fas fa-envelope-open-text"></i>
+  </div>
+</a>
 
 {% endblock page_header %}
-
-
-<!--
-four reasons to keep a learning journal:
-
-- Identifies gaps in knowledge.
-- Stores thoughts, ideas and knowledge to ensure retention.
-- Works to develop solutions to problems.
-- Develops self-directed learning characteristics.
--->

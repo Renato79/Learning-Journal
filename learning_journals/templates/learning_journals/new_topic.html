@@ -7,7 +7,12 @@
 <form action="{% url 'learning_journals:new_topic' %}" method='POST'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit" class="btn-red btn-add-size">Add topic</button>
+    <button name="submit" class="btn-red btn-index-size">Add topic</button>
 </form>
 
+<a class="darkgrey" href="{% url 'learning_journals:contact_us' %}">
+    <div class="contactus-div darkgrey">
+      <i class="fas fa-envelope-open-text"></i>
+    </div>
+</a>
 {% endblock content %}

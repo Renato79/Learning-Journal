@@ -1,12 +1,17 @@
 {% extends "learning_journals/base.html" %}
 {% load bootstrap5 %}
 
+{% block page_header %}
+<h1 class="mt-5 orange-deep myline">{{ topic }}</h1>
+{% endblock page_header %}
+
 {% block content %}
+
 <p>
-    <a href="{% url 'learning_journals:topic' topic.id %}" class="edittopic text-danger">{{ topic }}</a>
+    <a href="{% url 'learning_journals:topics'%}" class="edittopic">Back to Topics</a>
 </p>
 
-<p>Edit topic:</p>
+<p class="mt-5">Edit topic:</p>
 
 <form action="{% url 'learning_journals:edit_topic' topic.id %}" method='post'>
     {% csrf_token %}
@@ -14,4 +19,9 @@
     <button name="submit" class="btn-red btn-index-size">Save changes</button>
 </form>
 
+<a class="darkgrey" href="{% url 'learning_journals:contact_us' %}">
+    <div class="contactus-div darkgrey">
+        <i class="fas fa-envelope-open-text"></i>
+    </div>
+</a>
 {% endblock content %}

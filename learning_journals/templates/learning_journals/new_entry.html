@@ -1,14 +1,25 @@
 {% extends "learning_journals/base.html" %}
+{% load bootstrap5 %}
+
+{% block page_header %}
+<h1 class="mt-5 orange-deep myline">{{ topic }}</h1>
+{% endblock page_header %}
 
 {% block content %}
 
-<p><a href="{% url 'learning_journals:topic' topic.id %}" class="edittopic text-danger">{{ topic }}</a></p>
+<p><a href="{% url 'learning_journals:topic' topic.id %}" class="edittopic">Back to entries</a></p>
 
-<p class="txt-title">Add a new entry:</p>
+<p class="txt-title mt-5">Add a new entry:</p>
 <form action="{% url 'learning_journals:new_entry' topic.id %}" method='POST'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button name='submit' class="btn-red btn-index-size">Add entry</button>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name='submit' class="btn-red btn-index-size">Add entry</button>
 </form>
+
+<a class="darkgrey" href="{% url 'learning_journals:contact_us' %}">
+  <div class="contactus-div darkgrey">
+    <i class="fas fa-envelope-open-text"></i>
+  </div>
+</a>
 
 {% endblock content %}

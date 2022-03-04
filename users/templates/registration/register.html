@@ -2,11 +2,11 @@
 {% load bootstrap5 %}
 
 {% block page_header %}
-<h2 class="mt-5">Create your new account.</h2>
+<h1 class="mt-5 orange-deep myline">Create your new account.</h2>
 {% endblock page_header %}
 
 {% block content %}
-<div class="col-7">
+<div class="col-7 mt-5">
     <form method="post" action="{% url 'users:register' %}" class="form form-red">
         {% csrf_token %}
         {% bootstrap_form form %}

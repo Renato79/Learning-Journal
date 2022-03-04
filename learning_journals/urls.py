@@ -25,4 +25,8 @@ urlpatterns = [
     path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
     # Page to delete an entry
     path('delete_entry/<int:entry_id>/', views.delete_entry, name='delete_entry'),
+    # Page with the form contact us
+    path('contact_us/', views.contact_us, name='contact_us'),
+    # Page with the confirmation that the email has been sent
+    path('sent/', views.sent, name='sent'),
 ]

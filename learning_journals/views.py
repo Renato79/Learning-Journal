@@ -8,10 +8,11 @@ from django.http import Http404
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
+
+
 def index(request):
     """Home Page for learning_journals"""
     return render(request, 'learning_journals/index.html')
-
 
 
 """
@@ -72,7 +73,7 @@ def edit_topic(request, topic_id):
         form = TopicForm(instance=topic, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('learning_journals:topic', topic_id=topic.id)
+            return redirect('learning_journals:topics')
     
     context = {'topic': topic, 'form': form}
     return render(request,'learning_journals/edit_topic.html', context)
@@ -153,3 +154,18 @@ def delete_entry(request, entry_id):
     entry.delete()
     messages.success(request, 'Entry deleted!')
     return redirect('learning_journals:topic', topic.id)
+
+
+
+"""
+Contact us
+"""
+
+def contact_us(request):
+    """Contact us page form"""
+    return render(request, 'learning_journals/contact_us.html')
+
+
+def sent(request): 
+    """ Email contact us sent """
+    return render(request, 'learning_journals/sent.html')

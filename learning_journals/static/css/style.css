@@ -1,123 +1,144 @@
-/* INDEX PAGE */
+body {
+  font-family: 'Sathu', sans-serif !important;
+}
 
-/* Grey: #3f3d56 */
-/* Red: #d6293e */
+/* Forms style START */
+input {
+  width: 30%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #6C757D !important;
+}
 
+textarea {
+  width: 80%;
+  height: 20rem;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+/* Forms style END */
+
+
+/* Colors */
+.orange-deep {
+  color: #EB5E22;
+}
+
+.darkgrey {
+  color: #5E6062;
+}
+
+/* General unordered lists style */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* topic.html and topics.html */
+a.edittopic:link,
+a.edittopic:visited {
+  color: #6C757D;
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+a.edittopic:hover {
+  color: #a1a1a1;
+}
+
+a.topics:link,
+a.topics:visited {
+  font-size: 1.7rem;
+  color: #5E6062;
+  text-decoration: none;
+}
+
+a.topics:hover {
+  color: #919090;
+}
+
+/* Line height under the orange title */
+.myline {
+  line-height: .5;
+}
+
+
+
+/* Index */
 .txt-sm-center {
   text-align: center;
 }
 
 .index-img {
-    width: 18rem;
-    height: auto;
-    margin-right: 2rem;
+  width: 18rem;
+  height: auto;
+  margin-right: 2rem;
 }
 
 a.btn-red:link,
 a.btn-red:visited,
 button.btn-red {
-    color: #d6293e;
-    background-color: rgba(214, 41, 62, 0.1);
-    border: 1px solid transparent;
-    border-radius: 0.325rem;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  a.btn-red:hover,
-  button.btn-red:hover {
-    background-color: #d6293e;
-    color: white;
-  }
+  color: #ffffff;
+  background-color: #FF934F;
+  border: 1px solid transparent;
+  border-radius: 0.325rem;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  .btn-login-size {
-    width: 100%;
-    padding: 0.6rem 2rem;
-  }
+a.btn-red:hover,
+button.btn-red:hover {
+  background-color: #e0661a;
+  color: white;
+}
 
-  .btn-index-size {
-    padding: 1rem 2rem;
-  }
+.btn-login-size {
+  width: 100%;
+  padding: 0.6rem 2rem;
+}
 
-  .btn-add-size {
-    padding: 0.4rem 1.5rem;
-  }
+.btn-index-size {
+  padding: 1rem 2rem;
+}
 
-  .form-red:focus > input {
-    border: 20px solid rgba(214, 41, 62, 0.1) !important;
-  }
-  .contactus-div {
-    display: none;
-  }
+
+.contactus-div {
+  display: none;
+}
 
 .tips {
   margin-top: 5rem !important;
 }
 
-.tips > div {
+.tips>div {
   text-align: center;
   /* opacity: 0.5; */
 }
 
 .tips i {
-font-size: 2rem;
-color: #3f3d56;
+  font-size: 2rem;
+  color: #3f3d56;
 }
 
 .tips p {
   margin-top: 1rem;
   color: #3f3d56;
-  }
-
-
-/* topics.html */
-a.topics:link, 
-a.topics:visited {
-  color: #6c757d;
-  text-decoration: none;
-}
-
-a.topics:hover {
-  color: rgba(214, 41, 61, 0.863);
-}
-
-a.addtopic:link, 
-a.addtopic:visited {
-  color: #474d52;
-  font-size: 1.3rem;
-  text-decoration: none;
-}
-
-a.addtopic:hover {
-  color: rgba(214, 41, 61, 0.863);
 }
 
 
-
-/* topic.html */
-a.edittopic:link, 
-a.edittopic:visited {
-  color: #474d52;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-a.edittopic:hover {
-  color: rgba(214, 41, 61, 0.863);
-}
-
-.txt-title {
-color: #474d52;
-font-size: 1.2rem;
-}
-
-@media (min-width: 768px) {
-    /* contact us link will disappear from the menu after 576px,
-   and an icon will appear at the bottom right instead */ 
+@media (min-width: 576px) {
+  /* contact us link will disappear from the menu after 576px,
+   and an icon will appear at the bottom right instead */
   .contactus-menu {
     display: none;
   }
@@ -131,17 +152,16 @@ font-size: 1.2rem;
     border: 4px solid #3f3d56;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
-    box-shadow: 10px 10px 5px grey;
-    padding: 1rem 1rem;
+    box-shadow: 10px 10px 5px #FF934F;
+    padding: 1rem;
     text-align: center;
     font-size: 1.5rem;
     cursor: pointer;
   }
 
   .contactus-div:hover {
-    box-shadow: 10px 10px 5px #d6293e;
-}
-
+    box-shadow: 10px 10px 5px #a1a1a1;
+  }
 }
 
 
@@ -153,5 +173,4 @@ font-size: 1.2rem;
   .txt-sm-center {
     text-align: left;
   }
-
 }

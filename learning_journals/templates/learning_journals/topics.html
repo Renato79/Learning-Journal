@@ -2,23 +2,26 @@
 {% load bootstrap5 %}
 
 {% block page_header %}
-<h1 class="mt-5">Topics</h1>
+<h1 class="mt-5 orange-deep myline">My Topics</h1>
 {% endblock page_header %}
 
 {% block content %}
+<p cladd="mb-5">
+  <a href="{% url 'learning_journals:new_topic' %}" class="edittopic"><span class="orange-deep">+ </span>Add new
+    topic</a>
+</p>
 
-<ul class="mt-4">
+<ul class="mt-5 mb-5">
   {% for topic in topics %}
-  <li>
-    <h4>
-      <a href="{% url 'learning_journals:topic' topic.id %}" class="topics">{{ topic }}</a>
+  <li class="mt-4">
+    <a href="{% url 'learning_journals:topic' topic.id %}" class="topics">{{ topic }}</a>
 
-      <small><a href="{% url 'learning_journals:edit_topic' topic.id %}" class="edittopic">
-          <span class="text-danger">-</span> Edit</a></small>
+    <a href="{% url 'learning_journals:edit_topic' topic.id %}" class="edittopic">
+      <span class="orange-deep">-</span> Edit</a>
 
-      <small><a href="{% url 'learning_journals:delete_topic' topic.id %}" class="edittopic">
-          <span class="text-danger">-</span> Delete</a></small>
-    </h4>
+    <a href="{% url 'learning_journals:delete_topic' topic.id %}" class="edittopic">
+      <span class="orange-deep">-</span> Delete</a>
+
   </li>
 
   {% empty %}
@@ -28,7 +31,9 @@
   {% endfor %}
 </ul>
 
-<h3><a href="{% url 'learning_journals:new_topic' %}" class="addtopic"><span class="text-danger">+</span> Add a new
-    topic</a></h3>
-
+<a class="darkgrey" href="{% url 'learning_journals:contact_us' %}">
+  <div class="contactus-div darkgrey">
+    <i class="fas fa-envelope-open-text"></i>
+  </div>
+</a>
 {% endblock content %}
