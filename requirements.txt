@@ -18,3 +18,4 @@ soupsieve==2.3.1
 sqlparse==0.4.2
 toml==0.10.2
 urllib3==1.26.8
+whitenoise==6.0.0
