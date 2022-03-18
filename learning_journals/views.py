@@ -92,9 +92,6 @@ def delete_topic(request, topic_id):
     return redirect('learning_journals:topics')
 
 
-
-
-
 """
 ENTRIES
 """
